@@ -4,11 +4,74 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fireboy-Watergirl</title>
+
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <h1>Hello Team</h1>
-    <h1>test2</h1>
-    <h2>test3</h2>
+    <div class="wrapper">
+      <div class="overground">
+        <h1>FIREBOY AND WATERGIRL</h1>
+      </div>
+      <div class="divider"></div>
+      <div class="underground">
+        <div class="canvas-container">
+          <div class="character-container player1">
+            <div class="controls">
+              <div class="input">
+                <label>Head Emoji</label>
+                <select id="headEmoji1">
+                  <option value="🧑‍🦰">🧑‍🦰</option>
+                  <option value="👦">👦</option>
+                  <option value="👶">👶</option>
+                  <option value="🧔">🧔</option>
+                  <option value="👨‍🦳">👨‍🦳</option>
+                  <option value="🎅">🎅</option>
+                  <option value="😀">😀</option>
+                  <option value="😂">😂</option>
+                  <option value="😍">😍</option>
+                  <option value="👽">👽</option>
+                  <option value="🤖">🤖</option>
+                </select>
+              </div>
+              <div class="input">
+                <label>Legs Color</label>
+                <input type="color" id="legsColor1" value="#ec7709" />
+              </div>
+            </div>
+            <div id="character1"></div>
+          </div>
+          <button class="btn-start" onclick="saveSketches()">START</button>
+
+          <div class="character-container player2">
+            <div id="character2"></div>
+            <div class="controls">
+              <div class="input">
+                <select id="headEmoji2">
+                  <option value="👧">👧</option>
+                  <option value="👱‍♀️">👱‍♀️</option>
+                  <option value="👶">👶</option>
+                  <option value="👩‍🦰">👩‍🦰</option>
+                  <option value="👩‍🦳">👩‍🦳</option>
+                  <option value="🤶">🤶</option>
+                  <option value="😀">😀</option>
+                  <option value="😂">😂</option>
+                  <option value="😍">😍</option>
+                  <option value="👽">👽</option>
+                  <option value="🤖">🤖</option>
+                </select>
+                <label>Head Emoji</label>
+              </div>
+              <div class="input">
+                <input type="color" id="legsColor2" value="#336699" />
+                <label>Legs Color</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="scripts/sketch.js"></script>
     <script src="scripts/script.js"></script>
   </body>
 </html>
