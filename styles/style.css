@@ -41,6 +41,7 @@ select {
 
 .overground {
   background-image: url("/assets/images/Game-Backgrounds-1.jpg");
+  background-size: cover;
   position: relative;
   height: 90vh;
   display: flex;
