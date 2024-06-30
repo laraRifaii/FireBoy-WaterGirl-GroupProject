@@ -4,50 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fireboy-Watergirl</title>
+
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <div class="wrapper"></div>
-    <div class="overground"></div>
-    <div class="divider"></div>
-    <div class="underground">
-      <div class="canvas-container">
-        <div class="character-container">
-          <div id="character1"></div>
-          <div class="controls">
-            <label>Body Color:</label>
-            <input type="color" id="bodyColor1" value="#e44d26" />
-            <label>Legs Color:</label>
-            <input type="color" id="legsColor1" value="#996633" />
-            <label>Head Emoji:</label>
-            <select id="headEmoji1">
-              <option value="😀">😀</option>
-              <option value="😁">😁</option>
-              <option value="😂">😂</option>
-              <option value="😍">😍</option>
-              <option value="😃">😃</option>
-              <option value="👽">👽</option>
-              <option value="🤖">🤖</option>
-            </select>
+    <div class="wrapper">
+      <div class="overground">
+        <h1>FIREBOY AND WATERGIRL</h1>
+      </div>
+      <div class="divider"></div>
+      <div class="underground">
+        <div class="canvas-container">
+          <div class="character-container player1">
+            <div class="controls">
+              <div class="input">
+                <label>Head Emoji</label>
+                <select id="headEmoji1">
+                  <option value="🧑‍🦰">🧑‍🦰</option>
+                  <option value="👦">👦</option>
+                  <option value="👶">👶</option>
+                  <option value="🧔">🧔</option>
+                  <option value="👨‍🦳">👨‍🦳</option>
+                  <option value="🎅">🎅</option>
+                  <option value="😀">😀</option>
+                  <option value="😂">😂</option>
+                  <option value="😍">😍</option>
+                  <option value="👽">👽</option>
+                  <option value="🤖">🤖</option>
+                </select>
+              </div>
+              <div class="input">
+                <label>Legs Color</label>
+                <input type="color" id="legsColor1" value="#ec7709" />
+              </div>
+            </div>
+            <div id="character1"></div>
           </div>
-        </div>
+          <button class="btn-start" onclick="saveSketches()">START</button>
 
-        <div class="character-container">
-          <div id="character2"></div>
-          <div class="controls">
-            <label>Body Color:</label>
-            <input type="color" id="bodyColor2" value="#99ccff" />
-            <label>Legs Color:</label>
-            <input type="color" id="legsColor2" value="#336699" />
-            <label>Head Emoji:</label>
-            <select id="headEmoji2">
-              <option value="😀">😀</option>
-              <option value="😁">😁</option>
-              <option value="😂">😂</option>
-              <option value="😍">😍</option>
-              <option value="😃">😃</option>
-              <option value="👽">👽</option>
-              <option value="🤖">🤖</option>
-            </select>
+          <div class="character-container player2">
+            <div id="character2"></div>
+            <div class="controls">
+              <div class="input">
+                <select id="headEmoji2">
+                  <option value="👧">👧</option>
+                  <option value="👱‍♀️">👱‍♀️</option>
+                  <option value="👶">👶</option>
+                  <option value="👩‍🦰">👩‍🦰</option>
+                  <option value="👩‍🦳">👩‍🦳</option>
+                  <option value="🤶">🤶</option>
+                  <option value="😀">😀</option>
+                  <option value="😂">😂</option>
+                  <option value="😍">😍</option>
+                  <option value="👽">👽</option>
+                  <option value="🤖">🤖</option>
+                </select>
+                <label>Head Emoji</label>
+              </div>
+              <div class="input">
+                <input type="color" id="legsColor2" value="#336699" />
+                <label>Legs Color</label>
+              </div>
+            </div>
           </div>
         </div>
       </div>

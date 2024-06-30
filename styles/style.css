@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -5,4 +7,127 @@
 }
 
 body {
+  font-family: "Playwrite DE Grund", cursive;
+}
+
+input {
+  border: 2px solid #446982;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 32px;
+  height: 32px;
+}
+
+input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+select {
+  border: 1px solid #446982;
+  color: #446982;
+  border-radius: 15px;
+  font-size: 1.4rem;
+  width: 60px;
+  height: 40px;
+}
+
+.wrapper {
+  position: relative;
+
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.overground {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.underground {
+  z-index: -2;
+  position: relative;
+  background-image: url("../assets/images/underground.jpg");
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.canvas-container {
+  width: 80%;
+  margin-top: 12rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.character-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #2c2e3d59;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 1rem;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.controls {
+  height: 8rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls > div {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#headEmoji1 {
+  background-color: rgb(120, 18, 18);
+}
+#headEmoji2 {
+  background-color: rgb(23, 23, 105);
+}
+
+.player1 {
+  position: absolute;
+}
+.player2 {
+  position: absolute;
+}
+
+.btn-start {
+  z-index: 2;
+  position: absolute;
+  /* bottom: -10rem; */
+  transform: scale(10%);
+  background-color: #898079;
+  color: white;
+  font-size: 2rem;
+  padding: 2rem 4rem;
+  border: none;
+  border-radius: 35px;
+  box-shadow: 0px 0px 100px 20px #282b3e;
+}
+
+.btn-start:hover {
+  background-color: #988d85;
+  scale: 105%;
+  cursor: pointer;
+}
+
+.btn-start:active {
+  background-color: #6b645f;
+  scale: 95%;
 }
