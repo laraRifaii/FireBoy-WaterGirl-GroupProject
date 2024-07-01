@@ -30,8 +30,16 @@ let sketch1 = function (p) {
     p.rect(25, 110, 14, 27);
     p.rect(45, 110, 14, 27);
   };
+    
 
   function updateCharacter() {
+    function draw() {
+  if (mouseIsPressed) {
+    strokeWeight(5);
+    point(mouseX, mouseY);
+  }
+}
+
     character.legsColor = p.select("#legsColor1").value();
     character.headEmoji = p.select("#headEmoji1").value();
   }
@@ -61,7 +69,7 @@ let sketch2 = function (p) {
     p.textSize(40);
 
     p.text(character.headEmoji, 14, 40);
-    p.fill("#0268d7");
+    p.fill("#e44d26");
     p.rect(25, 50, 35, 60);
 
     p.push();
@@ -95,3 +103,9 @@ function saveSketches() {
   character1.saveSketch();
   character2.saveSketch();
 }
+
+function draw_body() {
+  if (mouseIsPressed) {
+    strokeWeight(5);
+    point(mouseX, mouseY);
+  }}
