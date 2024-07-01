@@ -1,58 +1,34 @@
-let Character = function (p, x, y, bodyAndArmsColor, legsColor, headEmoji) {
-  this.x = x;
-  this.y = y;
-
-  this.bodyAndArmsColor = bodyAndArmsColor;
-  this.legsColor = legsColor;
-  this.headEmoji = headEmoji;
-
-  this.draw = function () {
-    p.strokeWeight(3);
-
-    //Head
-    p.textSize(40);
-    //Body
-    p.clear();
-    p.fill(this.bodyAndArmsColor);
-    p.rect(this.x - 17, this.y - 20, 35, 60);
-    p.text(this.headEmoji, this.x - 27, this.y - 30);
-
-    //Legs
-    p.fill(this.legsColor);
-    p.rect(this.x - 15, this.y + 40, 14, 27);
-    p.rect(this.x + 4, this.y + 40, 14, 27);
-
-    //Arms
-    p.fill(this.bodyAndArmsColor);
-    p.rotate(0.19);
-    p.rect(this.x - 19, this.y - 22, 14, 50);
-    p.rotate(-0.4);
-    p.rect(this.x + 3, this.y - 6, 14, 50);
-  };
-
-  this.saveAsPNG = function (filename) {
-    p.saveCanvas(filename, "png");
-  };
-};
-
 let sketch1 = function (p) {
   let character;
 
   p.setup = function () {
     let canvas = p.createCanvas(80, 137);
+    p.background(255);
     canvas.parent("character1");
-    character = new Character(
-      p,
-      p.width / 2,
-      p.height / 2,
-      "#e44d26",
-      "#ff8e29",
-      "🧑‍🦰"
-    );
+    character = {
+      headEmoji: "🧑‍🦰",
+    };
   };
 
   p.draw = function () {
-    character.draw();
+    p.clear();
+    p.strokeWeight(3);
+    p.textSize(40);
+
+    // Draw character 1
+    p.text(character.headEmoji, 14, 40);
+    p.fill("#e44d26");
+    p.rect(25, 50, 35, 60);
+
+    p.push();
+    p.rotate(0.19);
+    p.rect(25, 46, 14, 50);
+    p.rotate(-0.4);
+    p.rect(43, 63, 14, 50);
+    p.pop();
+
+    p.rect(25, 110, 14, 27);
+    p.rect(45, 110, 14, 27);
   };
 
   function updateCharacter() {
@@ -64,7 +40,7 @@ let sketch1 = function (p) {
   p.select("#headEmoji1").changed(updateCharacter);
 
   p.saveSketch = function () {
-    character.saveAsPNG("character1.png");
+    p.saveCanvas("character1.png", "png");
   };
 };
 
@@ -74,18 +50,29 @@ let sketch2 = function (p) {
   p.setup = function () {
     let canvas = p.createCanvas(80, 137);
     canvas.parent("character2");
-    character = new Character(
-      p,
-      p.width / 2,
-      p.height / 2,
-      "#0268d7",
-      "#5c9ae9",
-      "👧"
-    );
+    character = {
+      headEmoji: "👧",
+    };
   };
 
   p.draw = function () {
-    character.draw();
+    p.clear();
+    p.strokeWeight(3);
+    p.textSize(40);
+
+    p.text(character.headEmoji, 14, 40);
+    p.fill("#0268d7");
+    p.rect(25, 50, 35, 60);
+
+    p.push();
+    p.rotate(0.19);
+    p.rect(25, 46, 14, 50);
+    p.rotate(-0.4);
+    p.rect(43, 63, 14, 50);
+    p.pop();
+
+    p.rect(25, 110, 14, 27);
+    p.rect(45, 110, 14, 27);
   };
 
   function updateCharacter() {
@@ -97,14 +84,14 @@ let sketch2 = function (p) {
   p.select("#headEmoji2").changed(updateCharacter);
 
   p.saveSketch = function () {
-    character.saveAsPNG("character2.png");
+    p.saveCanvas("character2.png", "png");
   };
 };
 
-let instance1 = new p5(sketch1);
-let instance2 = new p5(sketch2);
+let character1 = new p5(sketch1);
+let character2 = new p5(sketch2);
 
 function saveSketches() {
-  instance1.saveSketch();
-  instance2.saveSketch();
+  character1.saveSketch();
+  character2.saveSketch();
 }
