@@ -25,13 +25,9 @@ let sketch1 = function (p) {
 
 
   function updateCharacter() {
-    // function draw() {
-    character.legsColor = p.select("#legsColor1").value();
     character.headEmoji = p.select("#headEmoji1").value();
     }
-  // }
 
-  p.select("#legsColor1").changed(updateCharacter);
   p.select("#headEmoji1").changed(updateCharacter);
 
   p.saveSketch = function () {
@@ -65,11 +61,9 @@ let sketch2 = function (p) {
  
 
   function updateCharacter() {
-    character.legsColor = p.select("#legsColor2").value();
     character.headEmoji = p.select("#headEmoji2").value();
   }
 
-  p.select("#legsColor2").changed(updateCharacter);
   p.select("#headEmoji2").changed(updateCharacter);
 
   p.saveSketch = function () {
