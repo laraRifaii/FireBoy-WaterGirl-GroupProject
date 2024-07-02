@@ -186,7 +186,7 @@ img {
 
 #character1,
 #character2 {
-  scale: 1.5;
+  /* scale: 1.5; */
   border-radius: 15px;
   background-color: #988d85;
   box-shadow: 0px 0px 100px 20px #282b3e;

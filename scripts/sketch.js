@@ -17,31 +17,22 @@ let sketch1 = function (p) {
 
     // Draw character 1
     p.text(character.headEmoji, 14, 40);
-    p.fill("#e44d26");
-    p.rect(25, 50, 35, 60);
-
-    p.push();
-    p.rotate(0.19);
-    p.rect(25, 46, 14, 50);
-    p.rotate(-0.4);
-    p.rect(43, 63, 14, 50);
-    p.pop();
-
-    p.rect(25, 110, 14, 27);
-    p.rect(45, 110, 14, 27);
-  };
     
+    p.mouseDragged = function() {
+      if (p.mouseX >= 0 && p.mouseX <= p.width && p.mouseY >= 0 && p.mouseY <= p.height) {
+        p.stroke(0);
+        p.ellipse(p.mouseX, p.mouseY);
+      };
+    };  
+  };
+  
+  
 
   function updateCharacter() {
     function draw() {
-  if (mouseIsPressed) {
-    strokeWeight(5);
-    point(mouseX, mouseY);
-  }
-}
-
     character.legsColor = p.select("#legsColor1").value();
     character.headEmoji = p.select("#headEmoji1").value();
+    }
   }
 
   p.select("#legsColor1").changed(updateCharacter);
@@ -69,19 +60,15 @@ let sketch2 = function (p) {
     p.textSize(40);
 
     p.text(character.headEmoji, 14, 40);
-    p.fill("#e44d26");
-    p.rect(25, 50, 35, 60);
 
-    p.push();
-    p.rotate(0.19);
-    p.rect(25, 46, 14, 50);
-    p.rotate(-0.4);
-    p.rect(43, 63, 14, 50);
-    p.pop();
-
-    p.rect(25, 110, 14, 27);
-    p.rect(45, 110, 14, 27);
+    p.mouseDragged = () => {
+      if (p.mouseX >= 0 && p.mouseX <= p.width && p.mouseY >= 0 && p.mouseY <= p.height) {
+        p.strokeWeight(5);
+        p.point(p.mouseX, p.mouseY);
+      }
+    }
   };
+ 
 
   function updateCharacter() {
     character.legsColor = p.select("#legsColor2").value();
@@ -104,8 +91,18 @@ function saveSketches() {
   character2.saveSketch();
 }
 
-function draw_body() {
-  if (mouseIsPressed) {
-    strokeWeight(5);
-    point(mouseX, mouseY);
-  }}
+// p.draw_body() = function() {
+//   if (p.mouseIsPressed) {
+//     p.strokeWeight(5);
+//     p.point(p.mouseX, p.mouseY);
+//   }
+// }
+
+
+  // p.mouseDragged = function() {
+  //   // Draw points when mouse is dragged
+  //   if (p.mouseX >= 0 && p.mouseX <= p.width && p.mouseY >= 0 && p.mouseY <= p.height) {
+  //     p.stroke(5);
+  //     p.point(p.mouseX, p.mouseY);
+  //   }
+  // };
