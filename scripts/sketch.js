@@ -3,7 +3,6 @@ let sketch1 = function (p) {
 
   p.setup = function () {
     let canvas = p.createCanvas(80, 137);
-    p.background(255);
     canvas.parent("character1");
     character = {
       headEmoji: "🧑‍🦰",
@@ -11,22 +10,19 @@ let sketch1 = function (p) {
   };
 
   p.draw = function () {
-    p.clear();
     p.strokeWeight(3);
     p.textSize(40);
 
     // Draw character 1
     p.text(character.headEmoji, 14, 40);
     
-    p.mouseDragged = function() {
-      if (p.mouseX >= 0 && p.mouseX <= p.width && p.mouseY >= 0 && p.mouseY <= p.height) {
-        p.stroke(0);
-        p.ellipse(p.mouseX, p.mouseY);
-      };
-    };  
-  };
-  
-  
+    p.mouseDragged = () => {
+      p.stroke("#f01e2c");
+      p.ellipse(p.mouseX, p.mouseY, 3, 3);
+    };
+  };  
+
+
 
   function updateCharacter() {
     function draw() {
@@ -55,19 +51,17 @@ let sketch2 = function (p) {
   };
 
   p.draw = function () {
-    p.clear();
     p.strokeWeight(3);
     p.textSize(40);
 
     p.text(character.headEmoji, 14, 40);
 
     p.mouseDragged = () => {
-      if (p.mouseX >= 0 && p.mouseX <= p.width && p.mouseY >= 0 && p.mouseY <= p.height) {
-        p.strokeWeight(5);
-        p.point(p.mouseX, p.mouseY);
-      }
-    }
-  };
+      p.stroke("#0268d7");
+      p.ellipse(p.mouseX, p.mouseY, 3, 3);
+    };
+  };  
+
  
 
   function updateCharacter() {
@@ -90,19 +84,3 @@ function saveSketches() {
   character1.saveSketch();
   character2.saveSketch();
 }
-
-// p.draw_body() = function() {
-//   if (p.mouseIsPressed) {
-//     p.strokeWeight(5);
-//     p.point(p.mouseX, p.mouseY);
-//   }
-// }
-
-
-  // p.mouseDragged = function() {
-  //   // Draw points when mouse is dragged
-  //   if (p.mouseX >= 0 && p.mouseX <= p.width && p.mouseY >= 0 && p.mouseY <= p.height) {
-  //     p.stroke(5);
-  //     p.point(p.mouseX, p.mouseY);
-  //   }
-  // };
