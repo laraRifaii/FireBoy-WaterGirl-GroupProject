@@ -84,4 +84,8 @@ let character2 = new p5(sketch2);
 function saveSketches() {
   character1.saveSketch();
   character2.saveSketch();
+
+  setTimeout(() => {
+    window.location.href = "/game.html";
+  }, 1000);
 }

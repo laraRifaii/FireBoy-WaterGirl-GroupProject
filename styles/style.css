@@ -191,9 +191,11 @@ img {
 
 .player1 {
   position: absolute;
+  left: 10rem;
 }
 .player2 {
   position: absolute;
+  right: 10rem;
 }
 
 #character1,
