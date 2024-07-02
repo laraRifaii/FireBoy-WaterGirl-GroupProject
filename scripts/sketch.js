@@ -25,11 +25,11 @@ let sketch1 = function (p) {
 
 
   function updateCharacter() {
-    function draw() {
+    // function draw() {
     character.legsColor = p.select("#legsColor1").value();
     character.headEmoji = p.select("#headEmoji1").value();
     }
-  }
+  // }
 
   p.select("#legsColor1").changed(updateCharacter);
   p.select("#headEmoji1").changed(updateCharacter);
