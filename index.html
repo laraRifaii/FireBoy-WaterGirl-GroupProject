@@ -10,23 +10,39 @@
   <body>
     <div class="wrapper">
       <div class="overground">
+        <img
+          src="assets/images/overground.jpg"
+          alt="mountains background"
+          class="overground-image"
+        />
         <h1 class="title">
           <div class="fireboy">FIRE BOY</div>
           <div class="and">&nbsp; & &nbsp;</div>
           <div class="watergirl">WATER GIRL</div>
         </h1>
         <div class="box">
-          <h6>Scroll Down</h6>
+          <h2>Scroll Down</h2>
           <div class="arrow"></div>
         </div>
         <img
+          class="mountain-red"
+          src="assets/images/parallax-mountain-red.png"
+          alt="mountain"
+        />
+        <img
+          class="mountain-blue"
+          src="assets/images/parallax-mountain-blue.png"
+          alt="mountain"
+        />
+
+        <img
           class="far-trees-layer"
-          src="assets/images/parallax-mountain-trees.png"
+          src="assets/images/parallax-trees.png"
           alt="mountains grass"
         />
         <img
           class="trees-layer"
-          src="assets/images/parallax-mountain-foreground-trees.png"
+          src="assets/images/parallax-foreground-trees.png"
           alt="mountain foreground"
         />
       </div>
@@ -53,8 +69,8 @@
                   <option value="🤖">🤖</option>
                 </select>
               </div>
-              <div class="input">
-              </div>
+              <h3>Please draw your character here</h3>
+              <button class="btn-clear">Clear drawing</button>
             </div>
             <div id="character1"></div>
           </div>
@@ -79,8 +95,8 @@
                 </select>
                 <label>Head Emoji</label>
               </div>
-              <div class="input">
-              </div>
+              <h3>Please draw your character here</h3>
+              <button class="btn-clear">Clear drawing</button>
             </div>
           </div>
         </div>
@@ -88,6 +104,6 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <script src="scripts/sketch.js"></script>
-    <script src="scripts/script.js"></script>
+    <script src="scripts/parallax.js"></script>
   </body>
 </html>

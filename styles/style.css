@@ -8,11 +8,8 @@
 
 body {
   font-family: "Playwrite DE Grund", cursive;
-  background-color: rgb(57, 48, 64);
-}
-
-h6 {
-  font-size: 20px;
+  background-color: #57bcc6;
+  color: white;
 }
 
 input {
@@ -29,9 +26,9 @@ input::-webkit-color-swatch-wrapper {
 
 select {
   border: 1px solid #446982;
-  color: #446982;
+  color: #eef1f3;
   border-radius: 15px;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   width: 60px;
   height: 40px;
 }
@@ -56,9 +53,23 @@ img {
   justify-content: center;
   height: 100vh;
   font-family: "Caladea", serif;
-  background-image: url("/assets/images/Game-Backgrounds-1.jpg");
   background-size: cover;
   overflow: hidden;
+}
+
+.overground-image {
+  position: absolute;
+  height: 70%;
+}
+.mountain-red {
+  position: absolute;
+  right: 50rem;
+  width: 60%;
+}
+.mountain-blue {
+  position: absolute;
+  left: 50rem;
+  width: 60%;
 }
 
 .heading {
@@ -89,16 +100,18 @@ img {
 .box {
   position: absolute;
   top: 27rem;
+  font-weight: 800;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  color: #000;
 }
 
 .arrow {
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-top: 20px solid #000;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 30px solid #000;
   animation: bounce 2s infinite;
 }
 
@@ -121,7 +134,7 @@ img {
 .ground {
   z-index: -1;
   background-image: linear-gradient(#160805, #2b2d3e);
-  height: 5rem;
+  height: 3rem;
 }
 
 .underground {
@@ -143,6 +156,7 @@ img {
 }
 
 .character-container {
+  z-index: 1;
   display: flex;
   flex-direction: row;
   background-color: #2c2e3d59;
@@ -155,23 +169,21 @@ img {
 }
 
 .controls {
-  height: 8rem;
-  padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
 }
 
-.controls > div {
-  z-index: 1;
+.controls div {
   color: white;
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 #headEmoji1 {
-  background-color: rgb(120, 18, 18);
+  background-color: rgb(128, 22, 22);
 }
 #headEmoji2 {
   background-color: rgb(23, 23, 105);
@@ -186,32 +198,62 @@ img {
 
 #character1,
 #character2 {
-  /* scale: 1.5; */
   border-radius: 15px;
-  background-color: #988d85;
-  box-shadow: 0px 0px 100px 20px #282b3e;
+  background-color: #2b2e3f;
+  border: 1px solid #446982;
+  box-shadow: 0px 0px 50px 20px #282b3e;
 }
 
 .btn-start {
-  z-index: 2;
   position: absolute;
   transform: scale(10%);
-  background-color: #898079;
+  background-color: #4d3046;
   color: white;
   font-size: 2rem;
   padding: 2rem 4rem;
-  border: none;
+  border: 1px solid #282b3e;
   border-radius: 35px;
-  box-shadow: 0px 0px 100px 20px #282b3e;
+  box-shadow: 0px 0px 50px 20px #282b3e;
 }
 
 .btn-start:hover {
-  background-color: #988d85;
+  background-color: #56374f;
   scale: 105%;
   cursor: pointer;
 }
 
 .btn-start:active {
-  background-color: #6b645f;
+  background-color: #3f283a;
   scale: 95%;
+}
+
+.btn-clear {
+  background-color: #426c82;
+  color: white;
+  font-size: 1.4rem;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 35px;
+  box-shadow: 0px 0px 50px 20px #282b3e;
+}
+
+.btn-clear:hover {
+  background-color: #5f96b4;
+  scale: 105%;
+  cursor: pointer;
+}
+
+.btn-clear:active {
+  background-color: #335364;
+  scale: 95%;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #2b2e3f;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #4d3046;
+  border-radius: 20px;
 }
