@@ -48,12 +48,8 @@ img {
 }
 
 .overground {
-<<<<<<< HEAD
   background-image: url("/assets/images/Game-Backgrounds-1.jpg");
   background-size: cover;
-=======
-  z-index: -2;
->>>>>>> lara
   position: relative;
   display: flex;
   flex-direction: column;
