@@ -1,11 +1,11 @@
 let config = {
   type: Phaser.AUTO,
-  width: window.innerWidth * 0.995,
-  height: window.innerHeight * 0.995,
+  width: window.innerWidth,
+  height: window.innerHeight,
   physics: {
     default: "arcade",
     arcade: {
-      gravity: { y: 300 },
+      gravity: { y: 100 },
       debug: false,
     },
   },
@@ -38,28 +38,28 @@ let touchedBlueDoor;
 let levels = [
   {
     players: [
-      { x: 100, y: 568 },
-      { x: 150, y: 568 },
+      { x: 100, y: 468 },
+      { x: 150, y: 468 },
     ],
-    redDiamonds: [{ x: 1000, y: 450 }],
-    blueDiamonds: [{ x: 1200, y: 450 }],
+    redDiamonds: [{ x: 1100, y: 450 }],
+    blueDiamonds: [{ x: 1300, y: 450 }],
     boxes: [{ x: 300, y: 568, scale: { x: 0.5, y: 0.5 } }],
     platforms: [
-      { x: 400, y: 650, scale: { x: 30, y: 1 } },
-      { x: 1100, y: 490, scale: { x: 3, y: 0.3 } },
+      { x: 400, y: 680, scale: { x: 30, y: 1 } },
+      { x: 1200, y: 490, scale: { x: 3, y: 0.3 } },
       { x: 400, y: 530, scale: { x: 1, y: 0.3 } },
       { x: 700, y: 530, scale: { x: 1, y: 0.3 } },
     ],
-    greenPlatforms: [{ x: 1100, y: 489, scale: { x: 1, y: 0.3 } }],
-    redPlatforms: [{ x: 700, y: 649, scale: { x: 2, y: 1 } }],
-    bluePlatforms: [{ x: 400, y: 649, scale: { x: 2, y: 1 } }],
+    greenPlatforms: [{ x: 1200, y: 489, scale: { x: 1, y: 0.3 } }],
+    redPlatforms: [{ x: 700, y: 677, scale: { x: 2, y: 1 } }],
+    bluePlatforms: [{ x: 400, y: 677, scale: { x: 2, y: 1 } }],
     redDoors: [
-      { x: 100, y: 560, scale: { x: 1, y: 1 } },
-      { x: 1150, y: 560, scale: { x: 1, y: 1 } },
+      { x: 100, y: 590, scale: { x: 1, y: 1 } },
+      { x: 1150, y: 590, scale: { x: 1, y: 1 } },
     ],
     blueDoors: [
-      { x: 150, y: 560, scale: { x: 1, y: 1 } },
-      { x: 1200, y: 560, scale: { x: 1, y: 1 } },
+      { x: 150, y: 590, scale: { x: 1, y: 1 } },
+      { x: 1200, y: 590, scale: { x: 1, y: 1 } },
     ],
   },
   {
@@ -116,7 +116,11 @@ function create() {
 
   cursors = this.input.keyboard.createCursorKeys();
 
-  this.add.image(0, 0, "Background");
+  let bg = this.add.image(0, 0, "Background");
+
+  bg.setOrigin(0, 0);
+
+  bg.setScale(0.5, 0.4);
 
   //Platforms
   let platforms = this.physics.add.staticGroup();
@@ -190,7 +194,7 @@ function create() {
     levels[currentLevel].players[0].y,
     "char1"
   );
-  player1.setScale(0.1);
+  player1.setScale(0.2);
   player1.setBounce(0.2);
   player1.setCollideWorldBounds(true);
   player1.body.setGravityY(300);
@@ -203,9 +207,11 @@ function create() {
   player2 = this.physics.add.sprite(
     levels[currentLevel].players[1].x,
     levels[currentLevel].players[1].y,
+
     "char2"
   );
-  player2.setScale(0.1);
+
+  player2.setScale(0.2);
   player2.setBounce(0.2);
   player2.setCollideWorldBounds(true);
   player2.body.setGravityY(300);
