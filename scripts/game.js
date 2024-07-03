@@ -96,16 +96,16 @@ function preload() {
   // Load & Define our game assets
   this.load.image("char1", character1Image);
   this.load.image("char2", character2Image);
-  this.load.image("box", "assets/images/box.png");
-  this.load.image("redDiamond", "assets/images/redDiamond.png");
-  this.load.image("blueDiamond", "assets/images/blueDiamond.png");
-  this.load.image("Background", "assets/images/underground.jpg");
-  this.load.image("greenGround", "assets/images/greenGround.png");
-  this.load.image("redGround", "assets/images/redGround.png");
-  this.load.image("blueGround", "assets/images/blueGround.png");
-  this.load.image("greyGround", "assets/images/greyGround.png");
-  this.load.image("blueDoor", "assets/images/blueDoor.png");
-  this.load.image("redDoor", "assets/images/redDoor.png");
+  this.load.image("box", "../assets/images/box.png");
+  this.load.image("redDiamond", "../assets/images/redDiamond.png");
+  this.load.image("blueDiamond", "../assets/images/blueDiamond.png");
+  this.load.image("Background", "../assets/images/underground.jpg");
+  this.load.image("greenGround", "../assets/images/greenGround.png");
+  this.load.image("redGround", "../assets/images/redGround.png");
+  this.load.image("blueGround", "../assets/images/blueGround.png");
+  this.load.image("greyGround", "../assets/images/greyGround.png");
+  this.load.image("blueDoor", "../assets/images/blueDoor.png");
+  this.load.image("redDoor", "../assets/images/redDoor.png");
 }
 
 function create() {

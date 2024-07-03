@@ -89,6 +89,6 @@ function saveSketches() {
   localStorage.setItem("character2", dataURL2);
 
   setTimeout(() => {
-    window.location.href = "/game.html";
+    window.location.href = "../pages/game.html";
   }, 1000);
 }
