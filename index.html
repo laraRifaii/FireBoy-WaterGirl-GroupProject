@@ -10,20 +10,29 @@
   <body>
     <div class="wrapper">
       <div class="overground">
-        <div class="title">
+        <h1 class="title">
           <div class="fireboy">FIRE BOY</div>
           <div class="and">&nbsp; & &nbsp;</div>
           <div class="watergirl">WATER GIRL</div>
+        </h1>
+        <div class="box">
+          <h6>Scroll Down</h6>
+          <div class="arrow"></div>
         </div>
+        <img
+          class="far-trees-layer"
+          src="assets/images/parallax-mountain-trees.png"
+          alt="mountains grass"
+        />
+        <img
+          class="trees-layer"
+          src="assets/images/parallax-mountain-foreground-trees.png"
+          alt="mountain foreground"
+        />
       </div>
-      
-      <div class="box">
-        
-        <div class="arrow">
-          <h6> Scroll Down</h6>
-        </div>
-      </div>
-      <div class="divider"></div>
+
+      <div class="ground"></div>
+
       <div class="underground">
         <div class="canvas-container">
           <div class="character-container player1">
@@ -51,7 +60,7 @@
             </div>
             <div id="character1"></div>
           </div>
-          <button class="btn-start" onclick="saveSketches()">START</button>
+          <button class="btn-start" onclick="goToPage(), saveSketches()">START</button>
 
           <div class="character-container player2">
             <div id="character2"></div>
@@ -84,5 +93,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <script src="scripts/sketch.js"></script>
     <script src="scripts/script.js"></script>
+    <script src="scripts/game.js"></script>
+
   </body>
 </html>
