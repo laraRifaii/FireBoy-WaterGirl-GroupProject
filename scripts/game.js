@@ -94,8 +94,8 @@ let levels = [
     ],
     greenPlatforms: [
       { x: 600, y: 224, scale: { x: 4.2, y: 0.3 } },
-      { x: 520, y: 165, scale: { x: 0.4, y: 0.3 } },
-      { x: 700, y: 165, scale: { x: 0.4, y: 0.3 } },
+      { x: 520, y: 165, scale: { x: 0.4, y: 0.32 } },
+      { x: 700, y: 165, scale: { x: 0.4, y: 0.32 } },
     ],
     redPlatforms: [{ x: 750, y: 679, scale: { x: 11, y: 1 } }],
     bluePlatforms: [{ x: 600, y: 459, scale: { x: 0.8, y: 0.3 } }],
