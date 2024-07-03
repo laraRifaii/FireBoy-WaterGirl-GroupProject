@@ -82,8 +82,11 @@ let character1 = new p5(sketch1);
 let character2 = new p5(sketch2);
 
 function saveSketches() {
-  character1.saveSketch();
-  character2.saveSketch();
+  let dataURL1 = character1.canvas.toDataURL("image/png");
+  localStorage.setItem("character1", dataURL1);
+
+  let dataURL2 = character2.canvas.toDataURL("image/png");
+  localStorage.setItem("character2", dataURL2);
 
   setTimeout(() => {
     window.location.href = "/game.html";
