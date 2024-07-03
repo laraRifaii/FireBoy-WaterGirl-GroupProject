@@ -1,7 +1,7 @@
 let config = {
   type: Phaser.AUTO,
-  width: window.innerWidth,
-  height: window.innerHeight,
+  width: "100%",
+  height: "100%",
   physics: {
     default: "arcade",
     arcade: {
@@ -183,6 +183,7 @@ function create() {
   }
 
   let doors = this.physics.add.staticGroup();
+
   //Red doors
   let redDoor1 = levels[currentLevel].redDoors[0];
   let redDoor2 = levels[currentLevel].redDoors[1];
@@ -227,7 +228,6 @@ function create() {
   player2 = this.physics.add.sprite(
     levels[currentLevel].players[1].x,
     levels[currentLevel].players[1].y,
-
     "char2"
   );
 
@@ -264,6 +264,7 @@ function create() {
       redDiamondsArray[i].y,
       "redDiamond"
     );
+
     redDiamond.body.setAllowGravity(false);
     this.physics.add.collider(redDiamond, platforms);
     this.physics.add.overlap(player1, redDiamond, collectDiamond, null, this);
@@ -354,4 +355,9 @@ function player2Won(player, platform) {
   player.disableBody(true, true);
   touchedBlueDoor = true;
   nextLevel();
+}
+
+function restartGame() {
+  localStorage.removeItem("level");
+  location.reload();
 }
