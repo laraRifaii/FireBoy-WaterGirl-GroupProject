@@ -17,6 +17,9 @@ let config = {
 }
 let game = new Phaser.Game(config);
 
+// localStorage.removeItem("level");
+console.log(localStorage.getItem("level"));
+
 let currentLevel = 0;
 if (localStorage.level) {
   currentLevel = localStorage.getItem("level");
@@ -78,38 +81,26 @@ let levels = [
       { x: 100, y: 568 },
       { x: 150, y: 568 }
     ],
-    redDiamonds: [
-      { x: 1000, y: 450 },
-    ],
-    blueDiamonds: [
-      { x: 1200, y: 450 },
-    ],
-    boxes: [
-      { x: 1000, y: 100, scale: { x: 0.5, y: 0.5 } },
-    ],
+    redDiamonds: [{ x: 1000, y: 450 }],
+    blueDiamonds: [{ x: 1100, y: 450 }],
+    boxes: [{ x: 1000, y: 100, scale: { x: 0.5, y: 0.5 } }],
     platforms: [
       { x: 400, y: 650, scale: { x: 30, y: 1 } },
-      { x: 1100, y: 490, scale: { x: 3, y: 0.3 } },
+      { x: 1100, y: 155, scale: { x: 3, y: 0.3 } },
       { x: 400, y: 530, scale: { x: 1, y: 0.3 } },
       { x: 700, y: 530, scale: { x: 1, y: 0.3 } },
     ],
-    greenPlatforms: [
-      { x: 1100, y: 489, scale: { x: 1, y: 0.3 } },
-    ],
-    redPlatforms: [
-      { x: 700, y: 649, scale: { x: 2, y: 1 } },
-    ],
-    bluePlatforms: [
-      { x: 400, y: 649, scale: { x: 2, y: 1 } },
-    ],
+    greenPlatforms: [{ x: 100, y: 489, scale: { x: 1, y: 0.3 } }],
+    redPlatforms: [{ x: 700, y: 649, scale: { x: 2, y: 1 } }],
+    bluePlatforms: [{ x: 400, y: 649, scale: { x: 2, y: 1 } }],
     redDoors: [
       { x: 100, y: 560, scale: { x: 1, y: 1 } },
-      { x: 1150, y: 560, scale: { x: 1, y: 1 } }
+      { x: 1150, y: 100, scale: { x: 1, y: 1 } },
     ],
     blueDoors: [
       { x: 150, y: 560, scale: { x: 1, y: 1 } },
-      { x: 1200, y: 560, scale: { x: 1, y: 1 } }
-    ]
+      { x: 1200, y: 100, scale: { x: 1, y: 1 } },
+    ],
   },
 ];
 
@@ -274,12 +265,18 @@ function collectDiamond(player, diamond) {
 function nextLevel(){
   if(touchedBlueDoor && touchedRedDoor){ 
     if (!localStorage.level) {
-      localStorage.setItem("level", 1); 
+      localStorage.setItem("level", 1);
+      console.log("local storage ma fi shi");
     }
-    if (localStorage.level) {
-      localStorage.setItem("level", 1); 
+    else{
+      localStorage.setItem("level", parseInt(localStorage.getItem("level")) + 1);
+      console.log("local storage fi shi");
     }
-    localStorage.setItem("level", localStorage.getItem("level") + 1);
+    if (localStorage.getItem("level") == levels.length){
+      localStorage.setItem("level", 0);
+      console.log("local storage fawwal");
+    }
+
     location.reload();
   }
 }
