@@ -191,11 +191,11 @@ img {
 
 .player1 {
   position: absolute;
-  left: 10rem;
+  left: 5rem;
 }
 .player2 {
   position: absolute;
-  right: 10rem;
+  right: 5rem;
 }
 
 #character1,
@@ -208,7 +208,6 @@ img {
 
 .btn-start {
   position: absolute;
-  transform: scale(10%);
   background-color: #4d3046;
   color: white;
   font-size: 2rem;
